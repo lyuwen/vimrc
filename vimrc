@@ -1,45 +1,37 @@
 let mapleader='\'
-" Vundle part
-set nocompatible              " be iMproved, required
+set wildmenu
+set nocompatible
 set incsearch
 set updatetime=250
-filetype off                  " required
+filetype off
+
 "VimPlug
 call plug#begin('~/.vim/plugged')
-"Plug 'python-mode/python-mode'
-Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-latex/vim-latex'
-Plug 'rickhowe/diffchar.vim'
-"Plug 'tell-k/vim-autopep8'
-Plug 'tpope/vim-fugitive'
-Plug 'valloric/youcompleteme'
-Plug 'tpope/vim-surround'
-Plug 'majutsushi/tagbar'
-Plug 'rhysd/vim-grammarous'
-Plug 'rlue/vim-barbaric'
-Plug 'lyuwen/vim-ipython'
-"This is a vim test system
-Plug 'junegunn/vader.vim'
-Plug 'scrooloose/nerdcommenter'
-" All of your Plugins must be added before the following line
+  Plug 'scrooloose/nerdtree'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'vim-latex/vim-latex'
+  Plug 'rickhowe/diffchar.vim'
+  Plug 'tpope/vim-fugitive'
+  Plug 'valloric/youcompleteme'
+  Plug 'tpope/vim-surround'
+  Plug 'majutsushi/tagbar'
+  Plug 'rhysd/vim-grammarous'
+  Plug 'rlue/vim-barbaric'
+  Plug 'lyuwen/vim-ipython'
+  Plug 'scrooloose/nerdcommenter'
 call plug#end()
-" Brief help
-" :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 
-" Normal Part
-set nocompatible
-set wildmenu
-"
+"fortran
 let fortran_free_source=1
 let fortran_do_enddo=1
+
 ""In GUI the windows get larger
 if has("gui_running")
 	set lines=45 columns=180
 endif
 set backspace=2
+"color scheme
 syntax on
 set background=dark
 let g:solarized_termcolors = 256
@@ -56,11 +48,6 @@ set pastetoggle=<F4>
 "split direction
 set splitbelow
 set splitright
-"Move in displaced lines
-"noremap  <buffer> <silent> k gk
-"noremap  <buffer> <silent> j gj
-"noremap  <buffer> <silent> 0 g0
-"noremap  <buffer> <silent> $ g$
 "Moving between windows
 nnoremap <C-J> <C-W><C-J>
 nnoremap <leader>j <C-W><C-J>
@@ -73,18 +60,13 @@ nnoremap <leader>h <C-W><C-H>
 "indent
 set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 set expandtab
-"filetype on
-"filetype plugin on
-"filetype indent on
 filetype plugin indent on    " required
 set autoread " Set to auto read when a file is changed from the outside
 set encoding=utf-8
-
+"status line
 set laststatus=2
 set t_Co=256
 let g:airline_theme='solarized'
-"let g:solarized_visibility = "low"
-"let g:solarized_contrast = "low"
 set encoding=utf-8
 let g:airline_powerline_fonts = 1
 "set font
@@ -94,7 +76,6 @@ if islinux
 else
   set guifont=Monaco\ for\ Powerline
 endif
-"set switchbuf=usetab
 
 "vim-latex
 set grepprg=grep\ -nH\ $*
@@ -139,29 +120,16 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/plugged/youcompleteme/third_party/ycmd
 let g:DiffUnit='Char'
 
 "jedi
-"let g:jedi#show_call_signatures = 0
-"let g:jedi#show_call_signatures_delay = 0
-"let g:jedi#popup_on_dot = 0
 let g:jedi#completions_enabled = 0
-"let g:jedi#completions_command = "<C-N>"
-"let g:jedi#auto_initialization =1
 let g:jedi#use_tabs_not_buffers = 1
 
 "NERDtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"map <C-w> :NERDTreeToggle<CR>
 
 "NERDcommenter
 "Usages
-"[count]<leader>cc |NERDComComment|
-"[count]<leader>c<space> |NERDComToggleComment
-"[count]<leader>cn |NERDComNestedComment|
-"[count]<leader>ci |NERDComInvertComment|
-"[count]<leader>cs |NERDComSexyComment|
-"[count]<leader>cy |NERDComYankComment|
-"[count]<leader>cu |NERDComUncommentLine|
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
@@ -202,7 +170,9 @@ nnoremap <silent> <F2> <ESC>:call _saveExit()<CR><CR>
 nnoremap <silent><leader>p :call _CloseQuit()<CR><CR>
 nnoremap <leader>o <Esc>:call _CloseNonFileBuf()<CR>
 
+
 " Functions
+"close all the rest buffers
 function! _CloseNonFileBuf()
   if (&buftype == "nofile")
     exe ":q"
@@ -211,7 +181,7 @@ function! _CloseNonFileBuf()
     exe ":only"
   endif
 endfunction
-
+"save changes and exit
 function! _saveExit()
   if (&mod == 1)
     let choice = confirm("Save before exit?", "&1 Save\n&2 No\n&3 Cancel", 3)
@@ -226,7 +196,7 @@ function! _saveExit()
     exe ":quit"
   endif
 endfunction
-nnoremap <silent><leader>p :call _CloseQuit()<CR><CR>
+"quit vim
 function! _CloseQuit()
   if (&buftype == "nofile")
     exe ":q"
@@ -235,11 +205,11 @@ function! _CloseQuit()
     exe "call _saveExit()"
   endif
 endfunction
-
-
-vmap <silent>ll :call JoinList(',')<CR><CR>
+"join lines with ,
 function! JoinList(arg) range
   execute a:firstline  . "," . (a:lastline - 1) . 's/$/'.a:arg.'/ '
   execute a:firstline  . "," . (a:lastline) . 'join'
 endfunction
 
+nnoremap <silent><leader>p :call _CloseQuit()<CR><CR>
+vmap <silent>ll :call JoinList(',')<CR><CR>
