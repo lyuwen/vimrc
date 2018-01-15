@@ -123,6 +123,10 @@ let g:DiffUnit='Char'
 let g:jedi#completions_enabled = 0
 let g:jedi#use_tabs_not_buffers = 1
 
+"vim-ipython
+let g:ipy_perform_mappings = 0
+let g:ipy_autostart = 0
+
 "NERDtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
