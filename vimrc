@@ -20,6 +20,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'rlue/vim-barbaric'
   Plug 'lyuwen/vim-ipython'
   Plug 'scrooloose/nerdcommenter'
+  Plug 'junegunn/vader.vim'
+  "Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "fortran
@@ -100,8 +102,8 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-nnoremap <leader>; :let g:ycm_auto_trigger=0<CR>                " turn off YCM
-nnoremap <leader>; :let g:ycm_auto_trigger=1<CR>                "turn on YCM
+nnoremap <leader>yf :let g:ycm_auto_trigger=0<CR>                " turn off YCM
+nnoremap <leader>yo :let g:ycm_auto_trigger=1<CR>                "turn on YCM
 let g:ycm_auto_trigger=0
 let g:ycm_key_invoke_completion = '<C-l>'
 if islinux
@@ -131,6 +133,7 @@ let g:ipy_autostart = 0
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+nnoremap <leader>nt :NERDTreeToggle<CR>
 
 "NERDcommenter
 "Usages
