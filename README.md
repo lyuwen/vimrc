@@ -20,6 +20,10 @@ Enter Vim, enter commands:
 :PlugInstall
 ```
 
+## Personal information
+
+All personal information should be stored in file `private.vim` instead of vimrc.
+
 ## Fonts for airline status bar
 
 * Linux: [UbuntuMono](https://github.com/powerline/fonts/tree/master/UbuntuMono)

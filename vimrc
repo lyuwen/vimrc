@@ -5,6 +5,9 @@ set incsearch
 set updatetime=250
 filetype off
 
+" get private information
+source ~/.vim/private.vim
+
 "VimPlug
 call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdtree'
