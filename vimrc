@@ -22,6 +22,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdcommenter'
   Plug 'junegunn/vader.vim'
   "Plug 'airblade/vim-gitgutter'
+  Plug 'suan/vim-instant-markdown'
+  Plug 'tell-k/vim-autopep8'
 call plug#end()
 
 "fortran
