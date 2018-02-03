@@ -1,0 +1,7 @@
+language: vim
+
+before_script: |
+  git clone https://github.com/junegunn/vader.vim.git
+script: |
+  ln -s ${PWD} ~/.vim
+  vim -N -c 'set rtp+=vader.vim | Vader! test/*' > /dev/null

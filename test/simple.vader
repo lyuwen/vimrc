@@ -1,0 +1,18 @@
+Do ( PlugInstall ):
+  PlugInstall
+
+Given ():
+  Hello
+
+Execute python ( check Python support ):
+  import os
+  import vim
+  from vim import current, vars
+  vim.command('normal! yy2p')
+  current.buffer.append(os.path.basename(vars['vader_file']))
+
+Expect:
+  Hello
+  Hello
+  Hello
+  simple.vader
