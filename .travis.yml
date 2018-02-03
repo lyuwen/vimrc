@@ -3,6 +3,7 @@ language: vim
 before_script: |
   git clone https://github.com/junegunn/vader.vim.git
 script: |
+  pwd
   ln -s ${PWD} ~/.vim
   vim -Nu <(cat << VIMRC
   filetype off
@@ -11,4 +12,4 @@ script: |
   set rtp+=after
   filetype plugin indent on
   source vimrc
-  VIMRC) -c 'Vader! test/*'
+  VIMRC) -c 'PlugInstall | Vader! test/*'
