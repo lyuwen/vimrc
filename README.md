@@ -1,5 +1,7 @@
 # Vimrc
 
+[![Build Status](https://travis-ci.org/lyuwen/vimrc.svg?branch=master)](https://travis-ci.org/lyuwen/vimrc)
+
 This is my configuration of vim.
 
 ## Installation
