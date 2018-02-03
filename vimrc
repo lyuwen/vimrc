@@ -6,7 +6,9 @@ set updatetime=250
 filetype off
 
 " get private information
-source ~/.vim/private.vim
+if filereadable("~/.vim/private.vim")
+  source ~/.vim/private.vim
+endif
 
 "VimPlug
 call plug#begin('~/.vim/plugged')
