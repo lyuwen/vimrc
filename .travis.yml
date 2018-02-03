@@ -4,4 +4,11 @@ before_script: |
   git clone https://github.com/junegunn/vader.vim.git
 script: |
   ln -s ${PWD} ~/.vim
-  vim -N -c 'set rtp+=vader.vim | Vader! test/*'
+  vim -Nu <(cat << VIMRC
+  filetype off
+  set rtp+=vader.vim
+  set rtp+=.
+  set rtp+=after
+  filetype plugin indent on
+  source vimrc
+  VIMRC) -c 'Vader! test/*'
