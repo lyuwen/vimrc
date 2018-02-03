@@ -6,7 +6,7 @@ set updatetime=250
 filetype off
 
 " get private information
-if filereadable("~/.vim/private.vim")
+if !empty(glob("~/.vim/private.vim"))
   source ~/.vim/private.vim
 endif
 
