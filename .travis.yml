@@ -7,7 +7,7 @@ os:
 before_script: |
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update       ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install vim  ; fi
-  git clone https://github.com/junegunn/vader.vim.git
+  - git clone https://github.com/junegunn/vader.vim.git
 
 script: |
   pwd
