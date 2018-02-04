@@ -1,8 +1,8 @@
 language: vim
 
 os:
-  linux
-  osx
+  - linux
+  - osx
 
 before_script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update       ; fi
