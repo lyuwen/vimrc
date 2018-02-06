@@ -18,7 +18,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-latex/vim-latex'
   Plug 'rickhowe/diffchar.vim'
   Plug 'tpope/vim-fugitive'
-  Plug 'valloric/youcompleteme'
   Plug 'tpope/vim-surround'
   Plug 'majutsushi/tagbar'
   Plug 'rhysd/vim-grammarous'
@@ -29,6 +28,14 @@ call plug#begin('~/.vim/plugged')
   "Plug 'airblade/vim-gitgutter'
   Plug 'suan/vim-instant-markdown'
   Plug 'tell-k/vim-autopep8'
+  Plug 'nvie/vim-flake8'
+if has('nvim')
+  Plug 'davidhalter/jedi-vim'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'zchee/deoplete-jedi'
+else
+  Plug 'valloric/youcompleteme'
+endif
 call plug#end()
 
 "fortran
@@ -129,8 +136,10 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/plugged/youcompleteme/third_party/ycmd
 let g:DiffUnit='Char'
 
 "jedi
-let g:jedi#completions_enabled = 0
-let g:jedi#use_tabs_not_buffers = 1
+" let g:jedi#completions_enabled = 0
+" let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#completions_command = "<C-l>"
+let g:deoplete#enable_at_startup = 1
 
 "vim-ipython
 let g:ipy_perform_mappings = 0
