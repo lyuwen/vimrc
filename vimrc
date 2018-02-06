@@ -4,6 +4,7 @@ set nocompatible
 set incsearch
 set updatetime=250
 filetype off
+set nohlsearch
 
 " get private information
 if !empty(glob("~/.vim/private.vim"))
@@ -30,8 +31,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'tell-k/vim-autopep8'
   Plug 'nvie/vim-flake8'
 if has('nvim')
-  Plug 'davidhalter/jedi-vim'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'davidhalter/jedi-vim'
   Plug 'zchee/deoplete-jedi'
 else
   Plug 'valloric/youcompleteme'
@@ -136,10 +137,13 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/plugged/youcompleteme/third_party/ycmd
 let g:DiffUnit='Char'
 
 "jedi
-" let g:jedi#completions_enabled = 0
-" let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#completions_command = "<C-l>"
-let g:deoplete#enable_at_startup = 1
+let g:jedi#completions_enabled = 0
+let g:jedi#use_tabs_not_buffers = 1
+if has('nvim')
+  let g:deoplete#enable_at_startup = 1
+  let g:jedi#completions_command = "<C-l>"
+endif
+
 
 "vim-ipython
 let g:ipy_perform_mappings = 0
