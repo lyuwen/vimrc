@@ -1,5 +1,13 @@
 set tabstop=2 expandtab shiftwidth=2 softtabstop=2
-nnoremap <F9> :execute "!python %"<CR>
+if has("nvim")
+  nnoremap <F9> :call NvimRun() <CR>
+else
+  nnoremap <F9> :execute "!python %"<CR>
+endif
+function! NvimRun()
+  call neoterm#do("python %")
+  call neoterm#open()
+endfunction
 "set modeline
 "
 "

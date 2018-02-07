@@ -31,9 +31,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'tell-k/vim-autopep8'
   Plug 'nvie/vim-flake8'
 if has('nvim')
+  Plug 'ervandew/supertab'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'davidhalter/jedi-vim'
   Plug 'zchee/deoplete-jedi'
+  Plug 'kassio/neoterm'
 else
   Plug 'valloric/youcompleteme'
 endif
@@ -139,9 +141,18 @@ let g:DiffUnit='Char'
 "jedi
 let g:jedi#completions_enabled = 0
 let g:jedi#use_tabs_not_buffers = 1
+
+
+" neovim
 if has('nvim')
+  " Completion
   let g:deoplete#enable_at_startup = 1
   let g:jedi#completions_command = "<C-l>"
+  let g:SuperTabContextDefaultCompletionType = "<c-n>"
+  let g:SuperTabDefaultCompletionType = "<c-n>"
+
+  " neoterm
+  map <leader>t :Ttoggle <CR>
 endif
 
 
