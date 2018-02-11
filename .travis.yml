@@ -12,12 +12,12 @@ before_script:
 script: |
   pwd
   make
-  ln -s ${PWD} ~/.vim
-  vim -Nu <(cat << VIMRC
-  filetype off
-  set rtp+=vader.vim
-  set rtp+=.
-  set rtp+=after
-  filetype plugin indent on
-  source vimrc
-  VIMRC) -c 'PlugInstall | Vader! test/*'
+  #  ln -s ${PWD} ~/.vim
+  #  vim -Nu <(cat << VIMRC
+  #  filetype off
+  #  set rtp+=vader.vim
+  #  set rtp+=.
+  #  set rtp+=after
+  #  filetype plugin indent on
+  #  source vimrc
+  #  VIMRC) -c 'PlugInstall | Vader! test/*'
