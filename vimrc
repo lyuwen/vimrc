@@ -10,6 +10,8 @@ set nohlsearch
 " the base directory of all vim configurations.
 let g:vimrcdir=substitute(system('dirname '.shellescape($MYVIMRC)), '\n\+$', '', '')
 
+exe "set rtp+=".g:vimrcdir
+
 if empty(g:vimrcdir)
   let g:vimrcdir=$HOME.'/.vim'
 endif
