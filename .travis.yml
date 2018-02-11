@@ -11,6 +11,7 @@ before_script:
 
 script: |
   pwd
+  make
   ln -s ${PWD} ~/.vim
   vim -Nu <(cat << VIMRC
   filetype off

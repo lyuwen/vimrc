@@ -6,13 +6,21 @@ set updatetime=250
 filetype off
 set nohlsearch
 
+" Dynamically get the location of the vimrc file and assume that directory as
+" the base directory of all vim configurations.
+let g:vimrcdir=substitute(system('dirname '.shellescape($MYVIMRC)), '\n\+$', '', '')
+
+if empty(g:vimrcdir)
+  let g:vimrcdir=$HOME.'/.vim'
+endif
+
 " get private information
-if !empty(glob("~/.vim/private.vim"))
+if !empty(glob(g:vimrcdir."/private.vim"))
   source ~/.vim/private.vim
 endif
 
 "VimPlug
-call plug#begin('~/.vim/plugged')
+call plug#begin(g:vimrcdir.'/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
