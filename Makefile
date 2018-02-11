@@ -3,12 +3,12 @@ VIMRC=$(wildcard vimrc)
 
 YCM=$(wildcard plugged/youcompleteme)
 
-all: default
-
-.PHONY: $(YCM)
+default:
+	$(VIM) -Nu $(VIMRC) -c "PlugUpgrade | PlugInstall | PlugUpdate | qa!"
 
 $(YCM):
 	cd $@ && python install.py
 
-default: $(YCM)
-	$(VIM) -Nu $(VIMRC) -c "PlugUpgrade | PlugInstall | PlugUpdate | qa!"
+all: default $(YCM)
+
+.PHONY: $(YCM)

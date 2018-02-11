@@ -7,17 +7,7 @@ os:
 before_script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update       ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install vim  ; fi
-  - git clone https://github.com/junegunn/vader.vim.git
 
 script: |
   pwd
-  make
-  #  ln -s ${PWD} ~/.vim
-  #  vim -Nu <(cat << VIMRC
-  #  filetype off
-  #  set rtp+=vader.vim
-  #  set rtp+=.
-  #  set rtp+=after
-  #  filetype plugin indent on
-  #  source vimrc
-  #  VIMRC) -c 'PlugInstall | Vader! test/*'
+  make all
