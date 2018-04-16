@@ -119,15 +119,15 @@ nmap <F6> :TagbarToggle<CR>
 
 "youcompleteme
 "python with virtualenv support
-py << EOF
-import os, sys
-if sys.platform=='darwin':
-  sys.path.insert(0, "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages")
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
+" py << EOF
+" import os, sys
+" if sys.platform=='darwin':
+"   sys.path.insert(0, "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages")
+" if 'VIRTUAL_ENV' in os.environ:
+"     project_base_dir = os.environ['VIRTUAL_ENV']
+"     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"     execfile(activate_this, dict(__file__=activate_this))
+" EOF
 
 nnoremap <leader>yf :let g:ycm_auto_trigger=0<CR>                " turn off YCM
 nnoremap <leader>yo :let g:ycm_auto_trigger=1<CR>                "turn on YCM
