@@ -259,5 +259,13 @@ function! JoinList(arg) range
   execute a:firstline  . "," . (a:lastline) . 'join'
 endfunction
 
-nnoremap <silent><leader>p :call _CloseQuit()<CR><CR>
 vmap <silent>ll :call JoinList(',')<CR><CR>
+nnoremap <silent><leader>p :set paste!<CR><CR>
+
+" au BufWinLeave * mkview
+" au BufWinEnter * silent loadview
+" Uncomment the following to have Vim jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
