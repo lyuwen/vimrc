@@ -269,3 +269,17 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
+
+function! RunFile()
+  let g:fileext=expand('%:e')
+  if (g:fileext == "py")
+    if has("nvim")
+      nnoremap <F9> :call NvimRun() <CR>
+    else
+      execute "!python %"
+    endif
+  elseif (g:fileext == "tex")
+    call Build_TeX()
+  endif
+endfunction
+nnoremap <F9> :call RunFile() <CR>
