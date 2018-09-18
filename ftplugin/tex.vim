@@ -1,10 +1,10 @@
 set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 function! Build_TeX()
-  execute "!latexmk -g -pdf -pdflatex=\"pdflatex -interactive=nonstopmode\" % && latexmk -c"
+  execute "!latexmk -g -pdf -pdflatex=\"pdflatex -shell-escape -interactive=nonstopmode\" % && latexmk -c"
 endfunction
 function! Build_TeX_bg()
-  execute "!latexmk -g -pdf -pdflatex=\"pdflatex -interactive=nonstopmode\" % 2>/dev/null >/dev/null && latexmk -c 2>/dev/null >/dev/null &"
+  execute "!latexmk -g -pdf -pdflatex=\"pdflatex -shell-escape -interactive=nonstopmode\" % 2>/dev/null >/dev/null && latexmk -c 2>/dev/null >/dev/null &"
 endfunction
 function! Build_and_Preview()
   silent call Build_TeX() | silent execute "!open ".expand("%:r").".pdf" | redraw!
