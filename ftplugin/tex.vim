@@ -9,7 +9,7 @@ endfunction
 function! Build_and_Preview()
   silent call Build_TeX() | silent execute "!open ".expand("%:r").".pdf" | redraw!
 endfunction
-nnoremap <F9> :call Build_TeX()<CR>
+"nnoremap <F9> :call Build_TeX()<CR>
 nnoremap <S-F9> :call Build_TeX_bg()<CR><CR>
 nnoremap <leader>v :call Build_and_Preview()<CR>
 "set modeline
