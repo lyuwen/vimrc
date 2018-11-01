@@ -13,3 +13,5 @@ endfunction
 nnoremap <S-F9> :call Build_TeX_bg()<CR><CR>
 nnoremap <leader>v :call Build_and_Preview()<CR>
 "set modeline
+"
+nnoremap <leader>ce :call Tex_ChangeEnvironments()<CR>
