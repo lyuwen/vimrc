@@ -37,7 +37,7 @@ call plug#begin(g:vimrcdir.'/plugged')
   Plug 'scrooloose/nerdcommenter'
   Plug 'junegunn/vader.vim'
   "Plug 'airblade/vim-gitgutter'
-  Plug 'suan/vim-instant-markdown'
+  " Plug 'suan/vim-instant-markdown'
   Plug 'tell-k/vim-autopep8'
   Plug 'nvie/vim-flake8'
 if has('nvim')
@@ -261,6 +261,11 @@ endfunction
 
 vmap <silent>ll :call JoinList(',')<CR><CR>
 nnoremap <silent><leader>p :set paste!<CR><CR>
+
+" autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
+" According to
+" (http://vim.wikia.com/wiki/Always_start_on_first_line_of_git_commit_message)
+au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
 " au BufWinLeave * mkview
 " au BufWinEnter * silent loadview
