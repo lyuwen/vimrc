@@ -24,13 +24,13 @@ endif
 "VimPlug
 call plug#begin(g:vimrcdir.'/plugged')
   Plug 'scrooloose/nerdtree'
+  Plug 'majutsushi/tagbar'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'vim-latex/vim-latex'
   Plug 'rickhowe/diffchar.vim'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
-  Plug 'majutsushi/tagbar'
   Plug 'rhysd/vim-grammarous'
   Plug 'rlue/vim-barbaric'
   Plug 'lyuwen/vim-ipython'
@@ -137,8 +137,10 @@ if islinux
   let g:ycm_server_python_interpreter='/usr/bin/python'
   let g:ycm_python_binary_path = '/usr/bin/python'
 else
-  let g:ycm_server_python_interpreter='/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
-  let g:ycm_python_binary_path = '/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
+  " let g:ycm_server_python_interpreter='/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
+  " let g:ycm_python_binary_path = '/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
+  let g:ycm_server_python_interpreter='/usr/local/bin/python'
+  let g:ycm_python_binary_path = '/usr/local/bin/python'
 endif
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_goto_buffer_command = 'new-tab'
