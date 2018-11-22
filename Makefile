@@ -1,13 +1,14 @@
-VIM=$(shell which vim)
-VIMRC=$(wildcard vimrc)
+VIM     = $(shell which vim)
+VIMRC   = $(wildcard vimrc)
+PYTHON ?= $(shell which python)
 
-YCM=$(wildcard plugged/youcompleteme)
+YCM     = $(wildcard plugged/youcompleteme)
 
 default:
 	$(VIM) -Nu $(VIMRC) -c "PlugUpgrade | PlugInstall | PlugUpdate | qa!"
 
 $(YCM):
-	cd $@ && python install.py
+	cd $@ && $(PYTHON) install.py
 
 all: default $(YCM)
 
