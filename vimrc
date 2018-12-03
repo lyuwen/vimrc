@@ -30,6 +30,7 @@ call plug#begin(g:vimrcdir.'/plugged')
   Plug 'vim-latex/vim-latex'
   Plug 'rickhowe/diffchar.vim'
   Plug 'tpope/vim-fugitive'
+  Plug 'junegunn/gv.vim'
   Plug 'tpope/vim-surround'
   Plug 'rhysd/vim-grammarous'
   Plug 'rlue/vim-barbaric'
@@ -40,6 +41,7 @@ call plug#begin(g:vimrcdir.'/plugged')
   " Plug 'suan/vim-instant-markdown'
   Plug 'tell-k/vim-autopep8'
   Plug 'nvie/vim-flake8'
+  Plug 'terryma/vim-multiple-cursors'
 if has('nvim')
   Plug 'ervandew/supertab'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
