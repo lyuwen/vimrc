@@ -5,7 +5,6 @@ set incsearch
 set updatetime=250
 filetype off
 set nohlsearch
-
 " Dynamically get the location of the vimrc file and assume that directory as
 " the base directory of all vim configurations.
 let g:vimrcdir=substitute(system('dirname '.shellescape($MYVIMRC)), '\n\+$', '', '')
@@ -106,6 +105,7 @@ if islinux
   set guifont=Ubuntu\ Mono\ derivative\ Powerline
 else
   set guifont=Monaco\ for\ Powerline
+  set clipboard=unnamed
 endif
 
 "vim-latex
