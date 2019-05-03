@@ -300,3 +300,5 @@ endfunction
 nnoremap <F9> :call RunFile() <CR>
 
 set nofoldenable
+
+let g:Tex_DefaultTargetFormat = "pdf"
