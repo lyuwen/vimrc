@@ -298,3 +298,5 @@ function! RunFile()
   endif
 endfunction
 nnoremap <F9> :call RunFile() <CR>
+
+let g:Tex_DefaultTargetFormat = "pdf"
