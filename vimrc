@@ -298,3 +298,5 @@ function! RunFile()
   endif
 endfunction
 nnoremap <F9> :call RunFile() <CR>
+
+set nofoldenable
