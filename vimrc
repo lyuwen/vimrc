@@ -302,3 +302,5 @@ nnoremap <F9> :call RunFile() <CR>
 set nofoldenable
 
 let g:Tex_DefaultTargetFormat = "pdf"
+
+nnoremap <silent><leader>tt :put =strftime(\"%c\")<CR><CR>
