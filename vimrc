@@ -114,6 +114,10 @@ let g:tex_flavor='latex'
 let g:Tex_FoldedSections     = ""
 let g:Tex_FoldedEnvironments = ""
 let g:Tex_FoldedMisc         = ""
+" vim-latex
+let g:Tex_DefaultTargetFormat = "pdf"
+let g:Tex_MultipleCompileFormats = "pdf"
+let g:Tex_GotoError = 0
 
 "tagbar
 let g:tagbar_sort = 0
@@ -299,8 +303,7 @@ function! RunFile()
 endfunction
 nnoremap <F9> :call RunFile() <CR>
 
+" Disable folding
 set nofoldenable
-
-let g:Tex_DefaultTargetFormat = "pdf"
 
 nnoremap <silent><leader>tt :put =strftime(\"%c\")<CR><CR>
