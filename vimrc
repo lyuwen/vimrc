@@ -32,7 +32,6 @@ call plug#begin(g:vimrcdir.'/plugged')
   Plug 'junegunn/gv.vim'
   Plug 'tpope/vim-surround'
   Plug 'rhysd/vim-grammarous'
-  Plug 'rlue/vim-barbaric'
   Plug 'lyuwen/vim-ipython'
   Plug 'scrooloose/nerdcommenter'
   Plug 'junegunn/vader.vim'
