@@ -123,6 +123,9 @@ let g:Tex_GotoError = 0
 let g:tagbar_sort = 0
 nmap <F6> :TagbarToggle<CR>
 
+" C/C++ open corresponding source/header file
+map <F10> :tabnew %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+
 "youcompleteme
 "python with virtualenv support
 " py << EOF
