@@ -139,21 +139,21 @@ map <F10> :tabnew %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 nnoremap <leader>yf :let g:ycm_auto_trigger=0<CR>                " turn off YCM
 nnoremap <leader>yo :let g:ycm_auto_trigger=1<CR>                "turn on YCM
-let g:ycm_auto_trigger=0
+let g:ycm_auto_trigger=1
 let g:ycm_key_invoke_completion = '<C-l>'
-if islinux
-  let g:ycm_server_python_interpreter='/usr/bin/python'
-  let g:ycm_python_binary_path = '/usr/bin/python'
-else
-  " let g:ycm_server_python_interpreter='/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
-  " let g:ycm_python_binary_path = '/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
-  let g:ycm_server_python_interpreter='/usr/local/bin/python'
-  let g:ycm_python_binary_path = '/usr/local/bin/python'
-endif
+" if islinux
+"   " let g:ycm_server_python_interpreter='/usr/bin/python'
+"   " let g:ycm_python_binary_path = "/usr/bin/python"
+" else
+"   " let g:ycm_server_python_interpreter='/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
+"   " let g:ycm_python_binary_path = '/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
+"   let g:ycm_server_python_interpreter='/usr/local/bin/python'
+"   let g:ycm_python_binary_path = '/usr/local/bin/python'
+" endif
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_goto_buffer_command = 'new-tab'
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:ycm_global_ycm_extra_conf = "~/.vim/plugged/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+" let g:ycm_global_ycm_extra_conf = "~/.vim/plugged/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 
 "diffchar
 let g:DiffUnit='Char'
