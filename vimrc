@@ -40,6 +40,8 @@ call plug#begin(g:vimrcdir.'/plugged')
   Plug 'tell-k/vim-autopep8'
   Plug 'nvie/vim-flake8'
   Plug 'terryma/vim-multiple-cursors'
+  Plug 'vimwiki/vimwiki'
+  Plug 'JamshedVesuna/vim-markdown-preview'
 if has('nvim')
   Plug 'ervandew/supertab'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -128,11 +130,14 @@ map <F10> :tabnew %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 nnoremap <leader>yf :let g:ycm_auto_trigger=0<CR>                " turn off YCM
 nnoremap <leader>yo :let g:ycm_auto_trigger=1<CR>                "turn on YCM
+let g:ycm_auto_hover = ''
 let g:ycm_auto_trigger=1
 let g:ycm_key_invoke_completion = '<C-l>'
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_goto_buffer_command = 'new-tab'
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_confirm_extra_conf=0
+nmap <leader>D <plug>(YCMHover)
 
 "diffchar
 let g:DiffUnit='Char'
