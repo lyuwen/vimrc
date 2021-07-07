@@ -50,6 +50,7 @@ if has('nvim')
   Plug 'kassio/neoterm'
 else
   Plug 'valloric/youcompleteme'
+  " Plug 'eth-p/vim-it2-touchbar' " vim touch-bar function key integration with iTerm2
 endif
 call plug#end()
 
