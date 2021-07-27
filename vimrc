@@ -60,7 +60,7 @@ let fortran_do_enddo=1
 
 ""In GUI the windows get larger
 if has("gui_running")
-	set lines=45 columns=180
+	set lines=50 columns=200
 endif
 set backspace=2
 "color scheme
