@@ -308,3 +308,13 @@ let g:tagbar_type_tex = {
             \ 'sort'    : 0,
             \ 'deffile' : expand('<sfile>:p:h:h') . '/ctags/latex.cnf'
         \ }
+
+if has("touchbar")
+	an icon=NSTouchBarListViewTemplate TouchBar.Tags :TagbarToggle<CR>
+	" tmenu TouchBar.Tags Tags
+	an icon=NSTouchBarMoveToTemplate TouchBar.Save :w<CR>
+	" tmenu TouchBar.Save Save
+  if !empty(glob("SConstruct"))
+    an TouchBar.SCons :execute("!scons")<CR>
+  endif
+endif

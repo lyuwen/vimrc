@@ -35,3 +35,10 @@ let g:ipy_perform_mappings = 0
 let g:ipy_autostart = 0
 vmap  <buffer> <silent> <F9>           :python run_these_lines()<CR><CR>
 map  <buffer> <silent> <C-S-F9>        :IPythonNew<CR>
+
+if has("touchbar")
+	an icon=NSTouchBarPlayTemplate TouchBar.Run :execute("!python %")<CR>
+	" tmenu TouchBar.Run Run
+	an icon=NSTouchBarSlideshowTemplate TouchBar.RunInteractive :execute("!ipython -i %")<CR>
+	" tmenu TouchBar.RunInteractive Interactive
+endif
