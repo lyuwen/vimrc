@@ -310,7 +310,7 @@ let g:tagbar_type_tex = {
         \ }
 
 if has("touchbar")
-	an icon=NSTouchBarListViewTemplate TouchBar.Tags :TagbarToggle<CR>
+	an icon=NSTouchBarSidebarTemplate TouchBar.Tags :TagbarToggle<CR>
 	" tmenu TouchBar.Tags Tags
 	an icon=NSTouchBarMoveToTemplate TouchBar.Save :w<CR>
 	" tmenu TouchBar.Save Save
