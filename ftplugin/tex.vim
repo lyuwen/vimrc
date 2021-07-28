@@ -17,6 +17,6 @@ nnoremap <leader>v :call Build_and_Preview()<CR>
 nnoremap <leader>ce :call Tex_ChangeEnvironments()<CR>
 
 if has("touchbar")
-	an icon=NSTouchBarAddDetailTemplate TouchBar.Env :call Tex_FastEnvironmentInsert("no")<CR>
+	inoremenu icon=NSTouchBarAddDetailTemplate TouchBar.Env <C-r>=Tex_FastEnvironmentInsert("no")<cr>
 	" tmenu TouchBar.Env Env
 endif
