@@ -319,10 +319,10 @@ elseif (has("gui_running") && g:solarized_degrade == 1)
     let s:vmode       = "gui"
     let s:base03      = "#121212" "1c1c1c
     let s:base02      = "#262626"
-    let s:base01      = "#4e4e4e"
-    let s:base00      = "#585858"
-    let s:base0       = "#808080"
-    let s:base1       = "#8a8a8a"
+    let s:base01      = "#5e5e5e" "comment color
+    let s:base00      = "#787878"
+    let s:base0       = "#959595" "main text color
+    let s:base1       = "#ea8a8a"
     let s:base2       = "#d7d7af"
     let s:base3       = "#ffffd7"
     let s:yellow      = "#af8700"
