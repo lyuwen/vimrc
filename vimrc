@@ -3,6 +3,7 @@ set wildmenu
 set nocompatible
 set incsearch
 set updatetime=250
+set tabpagemax=100
 filetype off
 set nohlsearch
 " Dynamically get the location of the vimrc file and assume that directory as
