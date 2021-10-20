@@ -52,6 +52,8 @@ if has('nvim')
 else
   Plug 'valloric/youcompleteme'
   " Plug 'eth-p/vim-it2-touchbar' " vim touch-bar function key integration with iTerm2
+  " Plug 'dpelle/vim-languagetool'
+  Plug 'cespare/vim-toml', { 'branch': 'main' }
 endif
 call plug#end()
 
@@ -319,3 +321,5 @@ if has("touchbar")
     an TouchBar.SCons :execute("!scons")<CR>
   endif
 endif
+
+" let g:languagetool_jar="/Users/lyuwenfu/Developer/LanguageTool-5.2/languagetool-commandline.jar"
