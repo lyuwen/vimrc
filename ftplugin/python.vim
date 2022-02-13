@@ -1,4 +1,3 @@
-set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 "if has("nvim")
 "  nnoremap <F9> :call NvimRun() <CR>
 "else
