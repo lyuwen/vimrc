@@ -43,6 +43,10 @@ call plug#begin(g:vimrcdir.'/plugged')
   Plug 'terryma/vim-multiple-cursors'
   Plug 'vimwiki/vimwiki'
   Plug 'JamshedVesuna/vim-markdown-preview'
+  Plug 'tomtom/tlib_vim'
+  Plug 'MarcWeber/vim-addon-mw-utils'
+  Plug 'garbas/vim-snipmate'
+  Plug 'honza/vim-snippets'
 if has('nvim')
   Plug 'ervandew/supertab'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -84,13 +88,13 @@ set pastetoggle=<F4>
 set splitbelow
 set splitright
 "Moving between windows
-nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-J> <C-W><C-J>
 nnoremap <leader>j <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-K> <C-W><C-K>
 nnoremap <leader>k <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-L> <C-W><C-L>
 nnoremap <leader>l <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>h <C-W><C-H>
 "indent
 set tabstop=2 expandtab shiftwidth=2 softtabstop=2
@@ -201,13 +205,13 @@ autocmd bufnewfile *.py 0r $HOME/.vim/templates/python.temp
 " Mapping keys
 nnoremap <F5> <ESC>:w<CR>
 nnoremap <leader>s <ESC>:w<CR>
-nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-J> <C-W><C-J>
 nnoremap <leader>j <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-K> <C-W><C-K>
 nnoremap <leader>k <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-L> <C-W><C-L>
 nnoremap <leader>l <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>h <C-W><C-H>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
@@ -323,3 +327,8 @@ if has("touchbar")
 endif
 
 " let g:languagetool_jar="/Users/lyuwenfu/Developer/LanguageTool-5.2/languagetool-commandline.jar"
+
+"SnipMate
+let g:snipMate = { 'snippet_version' : 1 }
+imap <C-T> <Plug>snipMateNextOrTrigger
+smap <C-T> <Plug>snipMateNextOrTrigger
