@@ -37,12 +37,12 @@ call plug#begin(g:vimrcdir.'/plugged')
   Plug 'scrooloose/nerdcommenter'
   Plug 'junegunn/vader.vim'
   "Plug 'airblade/vim-gitgutter'
-  " Plug 'suan/vim-instant-markdown'
+  Plug 'suan/vim-instant-markdown'
   Plug 'tell-k/vim-autopep8'
   Plug 'nvie/vim-flake8'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'vimwiki/vimwiki'
-  Plug 'JamshedVesuna/vim-markdown-preview'
+  " Plug 'JamshedVesuna/vim-markdown-preview'
   Plug 'tomtom/tlib_vim'
   Plug 'MarcWeber/vim-addon-mw-utils'
   Plug 'garbas/vim-snipmate'
@@ -111,7 +111,8 @@ let g:airline_powerline_fonts = 1
 "set font
 let islinux=system("uname | grep -c Linux")
 if islinux
-  set guifont=Ubuntu\ Mono\ derivative\ Powerline
+  " set guifont=Ubuntu\ Mono\ derivative\ Powerline
+  set guifont=Monaco\ NF
 else
   set guifont=Monaco\ for\ Powerline
   set clipboard=unnamed
@@ -332,3 +333,14 @@ endif
 let g:snipMate = { 'snippet_version' : 1 }
 imap <C-T> <Plug>snipMateNextOrTrigger
 smap <C-T> <Plug>snipMateNextOrTrigger
+
+let g:ycm_language_server = []
+let g:ycm_language_server += [
+  \   { 'name': 'fortran',
+  \     'filetypes': [ 'fortran' ],
+  \     'cmdline': [ 'fortls', '--notify_init', '--hover_signature', '--hover_language', 'fortran', '--use_signature_help' ],
+  \   },
+  \ ]
+
+
+let g:instant_markdown_autostart = 0
