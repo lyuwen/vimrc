@@ -128,6 +128,7 @@ let g:Tex_FoldedMisc         = ""
 let g:Tex_DefaultTargetFormat = "pdf"
 let g:Tex_MultipleCompileFormats = "pdf"
 let g:Tex_GotoError = 0
+" let g:Tex_CompileRule_pdf = 'xelatex -synctex=1 -interaction=nonstopmode -file-line-error-style "$*"'
 
 "tagbar
 let g:tagbar_sort = 0
@@ -305,17 +306,41 @@ nnoremap <silent><leader>tt :put =strftime(\"%c\")<CR><CR>
 
 " Tagbar language definition for LaTeX
 let g:tagbar_type_tex = {
-              \ 'ctagstype' : 'latex',
+            \ 'ctagstype' : 'latex',
             \ 'kinds'     : [
                 \ 's:sections',
                 \ 'g:graphics:0:0',
                 \ 'l:labels',
                 \ 'r:refs:1:0',
-                \ 'p:pagerefs:1:0'
+                \ 'f:frames',
+                \ 'p:pagerefs:1:0',
+                \ '?:unknown',
             \ ],
             \ 'sort'    : 0,
             \ 'deffile' : expand('<sfile>:p:h:h') . '/ctags/latex.cnf'
         \ }
+
+" Tagbar language definition for Javascript
+let g:tagbar_type_javascript = {
+            \ 'ctagstype' : 'javascript',
+            \ 'kinds'     : [
+                \ 'T:tags',
+                \ 'A:array literals:1:0',
+                \ 'O:object literals:1:0',
+                \ 'P:object properties:1:0',
+                \ 'G:generator functions',
+                \ 'F:freeform functions',
+                \ 'C:constructors and classes',
+                \ 'M:methods',
+                \ 'V:variables:0:0',
+                \ 'I:imports:1:0',
+                \ 'E:named exports:1:0',
+                \ '?:unknown',
+            \ ],
+            \ 'sort'    : 0,
+            \ 'deffile' : expand('<sfile>:p:h:h') . '/ctags/javascript.cnf'
+        \ }
+
 
 if has("touchbar")
 	an icon=NSTouchBarSidebarTemplate TouchBar.Tags :TagbarToggle<CR>
