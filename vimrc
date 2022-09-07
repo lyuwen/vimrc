@@ -47,6 +47,7 @@ call plug#begin(g:vimrcdir.'/plugged')
   Plug 'MarcWeber/vim-addon-mw-utils'
   Plug 'garbas/vim-snipmate'
   Plug 'honza/vim-snippets'
+  Plug 'cdelledonne/vim-cmake'
 if has('nvim')
   Plug 'ervandew/supertab'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -77,7 +78,15 @@ let g:solarized_termcolors = 256
 let g:solarized_termtrans = 1
 let g:solarized_degrade = 1
 colorscheme solarized
-set nu
+" Line Numbers
+" set nu
+set number
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
+"
 set modeline
 "indent
 set autoindent
@@ -108,6 +117,7 @@ set t_Co=256
 let g:airline_theme='solarized'
 set encoding=utf-8
 let g:airline_powerline_fonts = 1
+let g:airline_solarized_bg='dark'
 "set font
 let islinux=system("uname | grep -c Linux")
 if islinux
@@ -147,6 +157,11 @@ let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_goto_buffer_command = 'new-tab'
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_confirm_extra_conf=0
+if !empty(glob($HOME.'/.ycm_extra_conf.py'))
+  let g:ycm_global_ycm_extra_conf = $HOME.'/.ycm_extra_conf.py'
+else
+  let g:ycm_global_ycm_extra_conf = g:vimrcdir.'/plugged/youcompleteme/.ycm_extra_conf.py'
+endif
 nmap <leader>D <plug>(YCMHover)
 
 "diffchar
