@@ -48,6 +48,7 @@ call plug#begin(g:vimrcdir.'/plugged')
   Plug 'garbas/vim-snipmate'
   Plug 'honza/vim-snippets'
   Plug 'cdelledonne/vim-cmake'
+  Plug 'michaeljsmith/vim-indent-object'
 if has('nvim')
   Plug 'ervandew/supertab'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -59,6 +60,7 @@ else
   " Plug 'eth-p/vim-it2-touchbar' " vim touch-bar function key integration with iTerm2
   " Plug 'dpelle/vim-languagetool'
   Plug 'cespare/vim-toml', { 'branch': 'main' }
+  Plug 'wellle/context.vim'
 endif
 call plug#end()
 
@@ -143,6 +145,9 @@ let g:Tex_GotoError = 0
 "tagbar
 let g:tagbar_sort = 0
 nmap <F6> :TagbarToggle<CR>
+
+" paste and presearve register
+vmap <leader>p "_dP
 
 " C/C++ open corresponding source/header file
 map <F10> :tabnew %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
@@ -234,7 +239,6 @@ nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <F3> :w !detex \| wc -w<CR>
 nnoremap <silent> <F2> <ESC>:call _saveExit()<CR><CR>
-nnoremap <silent><leader>p :call _CloseQuit()<CR><CR>
 nnoremap <leader>o <Esc>:call _CloseNonFileBuf()<CR>
 
 
@@ -279,7 +283,6 @@ function! JoinList(arg) range
 endfunction
 
 vmap <silent>ll :call JoinList(',')<CR><CR>
-nnoremap <silent><leader>p :set paste!<CR><CR>
 
 " autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 " According to
