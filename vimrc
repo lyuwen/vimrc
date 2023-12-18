@@ -61,6 +61,7 @@ else
   " Plug 'dpelle/vim-languagetool'
   Plug 'cespare/vim-toml', { 'branch': 'main' }
   Plug 'wellle/context.vim'
+  " Plug 'chrisbra/csv.vim'
 endif
 call plug#end()
 
